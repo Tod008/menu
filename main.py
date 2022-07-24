@@ -1,4 +1,4 @@
-#import pygame as p
+import pygame as p
 from game import Game
 
 g = Game()
