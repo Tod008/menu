@@ -1,8 +1,10 @@
 import pygame as p
 from menu import *
+from zelda.main import Game
 
+g = Game()
 
-class Game():
+class Game_Menu():
     def __init__(self):
         p.init()
         self.running, self.playing = True, False
@@ -10,13 +12,8 @@ class Game():
         self.DISPLAY_W, self.DISPLAY_H = 480, 270
         self.display = p.Surface((self.DISPLAY_W, self.DISPLAY_H))
         self.window = p.display.set_mode(((self.DISPLAY_W, self.DISPLAY_H)))
-<<<<<<< HEAD
-        self.font_name = '../menu/8-BIT WONDER.TFF'
-        # self.font_name = p.font.get_default_font()
-=======
         #self.font_name = '8-BIT WONDER.TFF'
         self.font_name = p.font.get_default_font()
->>>>>>> 6f233a24ca572d5bd4712105a3aa358e98b747e2
         self.BLACK, self.WHITE = (0, 0, 0), (255, 255, 255)
         self.main_menu = MainMenu(self)
         self.options = OptionsMenu(self)
@@ -25,15 +22,7 @@ class Game():
 
     def game_loop(self):
         while self.playing:
-            self.check_events()
-            if self.START_KEY:
-                self.playing = False
-            self.display.fill(self.BLACK)
-            self.draw_text("Thanks for Playing", 20,
-                           self.DISPLAY_W/2, self.DISPLAY_H/2)
-            self.window.blit(self.display, (0, 0))
-            p.display.update()
-            self.reset_keys()
+            g.run()
 
     def check_events(self):
         for event in p.event.get():
