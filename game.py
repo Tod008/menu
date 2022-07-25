@@ -1,5 +1,5 @@
-#from pickle import TRUE
 import pygame as p
+from menu import *
 
 
 class Game():
@@ -10,9 +10,13 @@ class Game():
         self.DISPLAY_W, self.DISPLAY_H = 480, 270
         self.display = p.Surface((self.DISPLAY_W, self.DISPLAY_H))
         self.window = p.display.set_mode(((self.DISPLAY_W, self.DISPLAY_H)))
-        self.font_name = '8-BIT WONDER.TFF'
-        #self.font_name = p.font.get_default_font()
+        #self.font_name = '8-BIT WONDER.TFF'
+        self.font_name = p.font.get_default_font()
         self.BLACK, self.WHITE = (0, 0, 0), (255, 255, 255)
+        self.main_menu = MainMenu(self)
+        self.options = OptionsMenu(self)
+        self.credits = CreditsMenu(self)
+        self.curr_menu = self.main_menu
 
     def game_loop(self):
         while self.playing:
@@ -30,6 +34,7 @@ class Game():
         for event in p.event.get():
             if event.type == p.QUIT:
                 self.running, self.playing = False, False
+                self.curr_menu.run_display = False
             if event.type == p.KEYDOWN:
                 if event.key == p.K_RETURN:
                     self.START_KEY = True
