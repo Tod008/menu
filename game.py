@@ -10,8 +10,8 @@ class Game():
         self.DISPLAY_W, self.DISPLAY_H = 480, 270
         self.display = p.Surface((self.DISPLAY_W, self.DISPLAY_H))
         self.window = p.display.set_mode(((self.DISPLAY_W, self.DISPLAY_H)))
-        self.font_name = '8-BIT WONDER.TFF'
-        #self.font_name = p.font.get_default_font()
+        self.font_name = '../menu/8-BIT WONDER.TFF'
+        # self.font_name = p.font.get_default_font()
         self.BLACK, self.WHITE = (0, 0, 0), (255, 255, 255)
 
     def game_loop(self):
