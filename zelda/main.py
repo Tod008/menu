@@ -7,7 +7,7 @@ from zelda.debug import debug
 class Game():
     def __init__(self):
         p.init()
-        self.screen = p.display.set_mode((SCREEN_W, SCREEN_H))
+        self.screen = p.display.set_mode((1280, 720))
         p.display.set_caption('Zelda')
         self.clock = p.time.Clock()
         self.level = Level()

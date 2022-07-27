@@ -9,7 +9,7 @@ class Game_Menu():
         p.init()
         self.running, self.playing = True, False
         self.UP_KEY, self.DOWN_KEY, self.START_KEY, self.BACK_KEY = False, False, False, False
-        self.DISPLAY_W, self.DISPLAY_H = 480, 270
+        self.DISPLAY_W, self.DISPLAY_H = 1280, 720
         self.display = p.Surface((self.DISPLAY_W, self.DISPLAY_H))
         self.window = p.display.set_mode(((self.DISPLAY_W, self.DISPLAY_H)))
         #self.font_name = '8-BIT WONDER.TFF'
