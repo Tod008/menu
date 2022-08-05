@@ -35,7 +35,7 @@ class Upgrade():
                 self.can_move = False
                 self.selection_time = p.time.get_ticks()
 
-            if keys[p.K_SPACE]:
+            if keys[p.K_SPACE] or keys[p.K_UP]:
                 self.can_move = False
                 self.selection_time = p.time.get_ticks()
                 self.item_list[self.selection_index].trigger(self.player)
